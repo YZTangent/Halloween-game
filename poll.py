@@ -1,10 +1,15 @@
 import telebot
 import pyautogui
+import os
+from dotenv import load_dotenv
 
 pyautogui.FAILSAFE = True
 
+# Load environment variables from .env file
+load_dotenv()
 
-bot = telebot.TeleBot("2077081748:AAGHsPm17HuSZFwcjLH3rfvo9NMmdvm_kOs")
+bot_token = os.getenv("TELE_BOT_TOKEN")
+bot = telebot.TeleBot(bot_token)
 
 # @bot.message_handler(commands=['start', 'help'])
 # def send_welcome(message):
